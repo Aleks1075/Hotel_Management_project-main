@@ -1,0 +1,105 @@
+@startuml
+class Guest
+{
+~ String name
+~ int phoneNumber
+~ int age
+~ boolean gender
++ Guest(String,int,int,boolean)
+}
+
+class RoomImpl.LuxurySingleRoom
+{
+~ boolean isLuxury
++ LuxurySingleRoom(String,int,int,boolean,int)
+}
+
+class Booking
+{
+~ int roomID
+~ int guestID
+~ int duration
+~ boolean bookingStatus
+~ ArrayList<Booking> BookingList
++ Booking(int,int,int,boolean)
++ void bookRoom(Booking)
++ void setDuration(int)
++ void check(boolean)
++ void cancelBooking(Booking)
+}
+
+abstract class RoomImpl.Room
+{
+~ String roomType
+~ int floor
+~ int floorNumber
+~ boolean available
+~ int price
++ Room(String,int,int,boolean,int)
+}
+
+class IOImpl.FileIO
+{
+~ ArrayList<String> readRoomData
+~ ArrayList<String> readGuestData
+~ ArrayList<String> readBookingData
++ void bookNewGuest()
++ void checkAvailableRoom()
++ void checkGuestIn()
++ void checkGuestOut()
++ void changeBooking()
+}
+
+class Main
+{
++ {static} void main(String[])
+}
+
+class RoomImpl.StandardSingleRoom
+{
++ StandardSingleRoom(String,int,int,boolean,int)
+}
+
+interface IOImpl.IO
+{
++ void bookNewGuest()
++ void checkAvailableRoom()
++ void checkGuestIn()
++ void checkGuestOut()
++ void changeBooking()
+}
+
+class RoomImpl.StandardDoubleRoom
+{
++ StandardDoubleRoom(String,int,int,boolean,int)
+}
+
+class TextUI
+{
++ String getName()
++ int getRoomNumber()
++ void getRoomType()
++ void getBookedRooms()
++ void getAvailableRooms()
++ void checkIn()
++ void checkOut()
+}
+
+class Hotel
+{
+~ {static} Scanner scanner
++ {static} void HotelManagement()
+}
+
+class RoomImpl.LuxuryDoubleRoom
+{
+~ boolean isLuxury
++ LuxuryDoubleRoom(String,int,int,boolean,int)
+}
+
+RoomImpl.StandardSingleRoom <|-- RoomImpl.LuxurySingleRoom
+IOImpl.IO <|.. IOImpl.FileIO
+RoomImpl.Room <|-- RoomImpl.StandardSingleRoom
+RoomImpl.Room <|-- RoomImpl.StandardDoubleRoom
+RoomImpl.StandardDoubleRoom <|-- RoomImpl.LuxuryDoubleRoom
+@enduml
