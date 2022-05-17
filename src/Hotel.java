@@ -82,17 +82,16 @@ class Hotel
     public void HotelManagement()
     {
         while(true) {
-            System.out.println("Welcome to the booking system");
+            System.out.println("Velkommen til booking system");
             System.out.println("-------------------------------");
-            System.out.println("1. Book a room");
-            System.out.println("2. Check in a room");
-            System.out.println("3. Check out a room");
-            System.out.println("4. Cancel a reservation");
-            System.out.println("5. List overview of all rooms");
-            System.out.println("6. List overview of all reservations");
-            System.out.println("7. Done");
-            System.out.println("0. Save & Exit");
-            System.out.println("Enter your choice: ");
+            System.out.println("1. Book et værelse");
+            System.out.println("2. Check in værelse");
+            System.out.println("3. Check ud værelse");
+            System.out.println("4. Afbestil reservation");
+            System.out.println("5. Listeoversigt over alle rum");
+            System.out.println("6. Listeoversigt over alle reservationer");
+            System.out.println("7. Gem & Afslut");
+            System.out.println("Indtast dit valg: ");
             int choice = scanner.nextInt();
 
             switch (choice) {
@@ -134,10 +133,8 @@ class Hotel
                     //ListAllBookings();
                     break;
                 case 7:
-                    System.out.println("Tak fordi du bruger Hotel Management System");
-                    break;
-                case 0:
                     saveData();
+                    System.out.println("Tak fordi du bruger booking system");
                     System.exit(0);
                     break;
                 default:
