@@ -44,7 +44,7 @@ public class Booking {
                         "Fuld navn: " + guestName + "\n" +
                         "Nationalitet: " + nationality + "\n" +
                         "Værelsesnummer: " + roomID + "\n" +
-                        "Kontaktnummer: " + guestNumber + "\n" +
+                        "Kontaktnummer: " + phoneNumber + "\n" +
                         "Antal overnatninger: " + duration + "\n";
     }
 }

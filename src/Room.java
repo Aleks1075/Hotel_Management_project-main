@@ -1,3 +1,7 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 public class Room
 {
     protected int ID;
@@ -8,7 +12,7 @@ public class Room
     private boolean status;
     private boolean isOccupied;
 
-    public Room(int ID, String roomType, String floor, int floorNumber, int price, boolean status)
+    /*public Room(int ID, String roomType, String floor, int floorNumber, int price, boolean status)
     {
         this.ID = ID;
         this.roomType = roomType;
@@ -17,7 +21,7 @@ public class Room
         this.price = price;
         this.status = status;
         isOccupied = false;
-    }
+    }*/
 
     public boolean isStatus() {
         return status;
@@ -31,6 +35,24 @@ public class Room
     {
         return isOccupied;
     }
+
+    public void printRoomData()
+    {
+        try
+        {
+            File file = new File("src/rooms.csv");
+            Scanner input = new Scanner(file);
+            while (input.hasNext())
+            {
+                System.out.println(input.nextLine());
+            }
+        }
+        catch (FileNotFoundException e)
+        {
+            System.out.println("File not found");
+        }
+    }
+
 
     @Override
     public String toString()

@@ -1,3 +1,4 @@
+import java.awt.print.Book;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -16,6 +17,7 @@ public class FileIO implements IO
     private int phoneNumber;
     private int roomNumber;
 
+    Room room = new Room();
     ArrayList<Room> rooms = new ArrayList<>();
     ArrayList<Booking> bookingList = new ArrayList<>();
 
@@ -72,11 +74,10 @@ public class FileIO implements IO
         phoneNumber = scanner.nextInt();
         System.out.println("Indtast venligst alder på gæsten");
         age = scanner.nextInt();
-                /*System.out.println("Indtast venligst kønet til gæsten");
-                gender = scanner.nextBoolean();*/
         System.out.println("Indtast venligst nationalitet");
         nationality = scanner.next();
         System.out.println("Indtast venligst værelsesnummer til gæsten");
+        room.printRoomData();
         roomNumber = scanner.nextInt();
         Booking booking = new Booking(roomID, guestName, duration, phoneNumber, age, gender, nationality, roomNumber);
         bookingList.add(booking);
@@ -100,7 +101,7 @@ public class FileIO implements IO
         try {
             PrintWriter pw = new PrintWriter(new FileWriter("src/Bookings.csv", true));
             for (Booking booking : bookingList) {
-                pw.write("\n" + booking.getFormattedBooking());
+                pw.write(booking.getFormattedBooking());
                 pw.write("\n");
             }
             pw.close();
