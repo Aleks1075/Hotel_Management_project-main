@@ -1,4 +1,4 @@
-ID,Roomtype,Floor,Floornumber,Price
+ID,Roomtype,Floor,Roomnumber,Price
 1,StandardSingleRoom,FirstFloor,1,1000
 2,StandardSingleRoom,FirstFloor,2,1000
 3,StandardSingleRoom,FirstFloor,3,1000
