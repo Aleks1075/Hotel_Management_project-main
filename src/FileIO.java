@@ -21,12 +21,6 @@ public class FileIO implements IO
     ArrayList<Room> rooms = new ArrayList<>();
     ArrayList<Booking> bookingList = new ArrayList<>();
 
-    @Override
-    public void bookNewGuest() {
-
-    }
-
-    @Override
     public void checkAvailableRoom()
     {
         for (int a = 0; a < rooms.size(); a++) {
@@ -36,29 +30,16 @@ public class FileIO implements IO
         }
     }
 
-    private static void displayRooms(ArrayList<Room> rooms)
-    {
-        for(int i=0;i<rooms.size();i++)
-        {
-            if(!rooms.get(i).isOccupied())
-            {
-                System.out.println(rooms.get(i));
-            }
-        }
-    }
 
-
-    @Override
     public void checkGuestIn() {
 
     }
 
-    @Override
     public void checkGuestOut() {
 
     }
 
-    @Override
+
     public void changeBooking() {
 
     }
